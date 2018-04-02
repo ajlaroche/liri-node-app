@@ -1,3 +1,3 @@
 # liri-node-app
 Language interpretation and recognition
-./images/mytweets.jpg
+![Alt text](./images/mytweets.jpg)
