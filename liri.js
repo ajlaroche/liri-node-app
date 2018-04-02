@@ -72,9 +72,13 @@ function spot() {
             spotifyApi.setRefreshToken(data.body['refresh_token']);
             console.log(userArgument)
 
-            spotifyApi.searchArtists(userArgument, { market: "us", limit: 3, offset: 2 })
+            spotifyApi.searchTracks(userArgument, { market: "us", limit: 10, offset: 5 })
                 .then(function (data) {
-                    console.log(data.body);
+                    console.log(data.body.tracks.items[0].album.artists[0].name);
+                    console.log(data.body.tracks.items[0].album.name); //Album name
+                    console.log(data.body.tracks.items[0].name) //Song name
+                    console.log(data.body.tracks.items[0].popularity)
+                    console.log(data.body.tracks.items[0].preview_url)
                     fs.appendFile("log.txt", "\n" + data.body, function (err) {
                         if (err) {
                             return console.log(err);
