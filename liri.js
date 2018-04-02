@@ -63,27 +63,48 @@ function spot() {
     logCommand();
     spotifyApi.clientCredentialsGrant()
         .then(function (data) {
-            console.log('The access token expires in ' + data.body['expires_in']);
-            console.log('The access token is ' + data.body['access_token']);
+            // console.log('The access token expires in ' + data.body['expires_in']);
+            // console.log('The access token is ' + data.body['access_token']);
 
             // Save the access token so that it's used in future calls
 
             spotifyApi.setAccessToken(data.body['access_token']);
             spotifyApi.setRefreshToken(data.body['refresh_token']);
-            console.log(userArgument)
-
-            spotifyApi.searchTracks(userArgument, { market: "us", limit: 10, offset: 5 })
+       
+            spotifyApi.searchTracks(userArgument, { market: "us", limit: 3, offset: 5 })
                 .then(function (data) {
-                    console.log(data.body.tracks.items[0].album.artists[0].name);
-                    console.log(data.body.tracks.items[0].album.name); //Album name
-                    console.log(data.body.tracks.items[0].name) //Song name
-                    console.log(data.body.tracks.items[0].popularity)
-                    console.log(data.body.tracks.items[0].preview_url)
-                    fs.appendFile("log.txt", "\n" + data.body, function (err) {
-                        if (err) {
-                            return console.log(err);
-                        }
-                    })
+                    for (var i = 0; i < 3; i++) {
+                        console.log("Artist name: " + data.body.tracks.items[i].album.artists[0].name);
+                        console.log("Album name: " + data.body.tracks.items[i].album.name); //Album name
+                        console.log("Song name: " + data.body.tracks.items[i].name) //Song name
+                        console.log("Preview url: " + data.body.tracks.items[i].preview_url)
+                        console.log("--------------------------------------------------------------------")
+                        fs.appendFile("log.txt", "\n" + "Artist name: " + data.body.tracks.items[i].album.artists[0].name, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+                        fs.appendFile("log.txt", "\n" + "Album name: " + data.body.tracks.items[i].album.name, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+                        fs.appendFile("log.txt", "\n" + "Song name: " + data.body.tracks.items[i].name, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+                        fs.appendFile("log.txt", "\n" + "Preview url: " + data.body.tracks.items[i].preview_url, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+                        fs.appendFile("log.txt", "\n" + "-------------------------------------------------------------------", function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
+                    }
                 }, function (err) {
                     console.error(err);
                 }), function (err) {
@@ -95,7 +116,7 @@ function spot() {
 
 function movies() {
     logCommand();
-    
+
     var queryUrl = "http://www.omdbapi.com/?t=" + userArgument + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl);
     request(queryUrl, function (error, response, body) {
