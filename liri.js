@@ -8,7 +8,16 @@ var SpotifyWebApi = require('spotify-web-api-node');
 var request = require("request");
 var fs = require("fs");
 
-
+function logCommand() {
+    if (typeof userArgument === "undefined") {
+        userArgument = "";
+    }
+    fs.appendFile("log.txt", "\n" + "\n" + userCommand + " " + userArgument + "\n", function (err) {
+        if (err) {
+            return console.log(err);
+        }
+    });
+}
 
 // var spotify = new Spotify(keys.spotify);
 var spotifyApi = new SpotifyWebApi(keys.spotify);
@@ -23,29 +32,54 @@ var userInput = process.argv;
 
 var userCommand = userInput[2];
 var userArgument = userInput[3];
+var maxTweets;
 
-function tweeting(){
-     client.get('statuses/user_timeline', params, function (error, tweets, response) {
+function tweeting() {
+    logCommand();
+    client.get('statuses/user_timeline', params, function (error, tweets, response) {
+
+        if (tweets.length < 20) {
+            maxTweets = tweets.length;
+        } else {
+            maxTweets = 20;
+        }
         if (!error) {
-            console.log(tweets);
+            for (var i = 0; i < maxTweets; i++) {
+                var show = "Tweet #" + (i + 1) + ": " + tweets[i].text + "  (created on: " + tweets[i].created_at + ")";
+                console.log(show);
+                fs.appendFile("log.txt", "\n" + show, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+            }
         } else {
             console.log(error);
         }
     });
 }
 
-function spot(){
-       spotifyApi.clientCredentialsGrant()
+function spot() {
+    logCommand();
+    spotifyApi.clientCredentialsGrant()
         .then(function (data) {
             console.log('The access token expires in ' + data.body['expires_in']);
             console.log('The access token is ' + data.body['access_token']);
 
             // Save the access token so that it's used in future calls
-            spotifyApi.setAccessToken(data.body['access_token']);
 
-            spotifyApi.searchTracks(userArgument)
+            spotifyApi.setAccessToken(data.body['access_token']);
+            spotifyApi.setRefreshToken(data.body['refresh_token']);
+            console.log(userArgument)
+
+            spotifyApi.searchArtists(userArgument, { market: "us", limit: 3, offset: 2 })
                 .then(function (data) {
                     console.log(data.body);
+                    fs.appendFile("log.txt", "\n" + data.body, function (err) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                    })
                 }, function (err) {
                     console.error(err);
                 }), function (err) {
@@ -55,8 +89,9 @@ function spot(){
         });
 }
 
-function movies(){
-     if (typeof userArgument == "undefined") {
+function movies() {
+    logCommand();
+    if (typeof userArgument == "undefined") {
         userArgument = "Mr. Nobody";
     }
     var queryUrl = "http://www.omdbapi.com/?t=" + userArgument + "&y=&plot=short&apikey=trilogy";
@@ -74,6 +109,49 @@ function movies(){
                 console.log("Language: " + JSON.parse(body).Language);
                 console.log("Plot: " + JSON.parse(body).Plot);
                 console.log("Actors: " + JSON.parse(body).Actors);
+
+                fs.appendFile("log.txt", "\n" + "title: " + JSON.parse(body).Title, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+                fs.appendFile("log.txt", "\n" + "Year: " + JSON.parse(body).Year, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+                fs.appendFile("log.txt", "\n" + "IMDB Rating: " + JSON.parse(body).imdbRating, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+                fs.appendFile("log.txt", "\n" + "Rotten Tomatoes: " + JSON.parse(body).Ratings[1].Value, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+
+                fs.appendFile("log.txt", "\n" + "Country: " + JSON.parse(body).Country, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+                fs.appendFile("log.txt", "\n" + "Language: " + JSON.parse(body).Language, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+                fs.appendFile("log.txt", "\n" + "Plot: " + JSON.parse(body).Plot, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+                fs.appendFile("log.txt", "\n" + "Actors: " + JSON.parse(body).Actors, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+
             }
         } else {
             console.log(error, response);
@@ -82,43 +160,21 @@ function movies(){
 }
 
 if (userCommand === "my-tweets") {
-   tweets();
+    tweeting();
 }
 
-// if (request[2]==="spotify-this-song"){
-//     spotify.search({ type: 'track', query: request[3] }, function(err, data) {
-//         if (err) {
-//           return console.log('Error occurred: ' + err);
-//         }
-
-//       console.log(data); 
-//       });
-// }
-// spotifyApi.clientCredentialsGrant()
-//     .then(function (data) {
-//         console.log('The access token expires in ' + data.body['expires_in']);
-//         console.log('The access token is ' + data.body['access_token']);
-
-//         // Save the access token so that it's used in future calls
-//         spotifyApi.setAccessToken(data.body['access_token']);
-
-
-//     }, function (err) {
-//         console.log('Something went wrong when retrieving an access token', err);
-//     });
-
 if (userCommand === "spotify-this-song") {
- spot();
+    spot();
 }
 
 var queryUrl = "http://www.omdbapi.com/?t=" + userArgument + "&y=&plot=short&apikey=trilogy";
 
 if (userCommand === "movie-this") {
-   movies();
+    movies();
 }
 
 if (userCommand === "do-what-it-says") {
-
+    logCommand();
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
             return console.log(error)
@@ -130,16 +186,16 @@ if (userCommand === "do-what-it-says") {
 
         userArgument = readCommands[1];
 
-        switch(readCommands[0]){
+        switch (readCommands[0]) {
             case "my-tweets":
-            tweets();
-            break;
+                tweets();
+                break;
             case "spotify-this-song":
-            spot();
-            break;
+                spot();
+                break;
             case "movie-this":
-            movies();
-            break;
+                movies();
+                break;
         }
     });
 }

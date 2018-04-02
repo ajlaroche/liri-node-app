@@ -1,0 +1,23 @@
+my-tweets 
+
+Tweet #1: Happy Easter to All!  (created on: Sun Apr 01 22:02:07 +0000 2018)
+Tweet #2: Here is a second tweet  (created on: Sat Mar 31 00:20:51 +0000 2018)
+Tweet #3: Just setting up my Twitter. #myfirstTweet  (created on: Fri Mar 30 01:52:06 +0000 2018)
+
+
+movie-this forrest gump
+
+Year: 1994
+Rotten Tomatoes: 72%
+title: Forrest Gump
+Language: English
+Actors: Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys
+Plot: The presidencies of Kennedy and Johnson, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.
+Country: USA
+IMDB Rating: 8.8
+
+my-tweets 
+
+Tweet #1: Happy Easter to All!  (created on: Sun Apr 01 22:02:07 +0000 2018)
+Tweet #2: Here is a second tweet  (created on: Sat Mar 31 00:20:51 +0000 2018)
+Tweet #3: Just setting up my Twitter. #myfirstTweet  (created on: Fri Mar 30 01:52:06 +0000 2018)
