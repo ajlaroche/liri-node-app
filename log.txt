@@ -21,3 +21,76 @@ my-tweets
 Tweet #1: Happy Easter to All!  (created on: Sun Apr 01 22:02:07 +0000 2018)
 Tweet #2: Here is a second tweet  (created on: Sat Mar 31 00:20:51 +0000 2018)
 Tweet #3: Just setting up my Twitter. #myfirstTweet  (created on: Fri Mar 30 01:52:06 +0000 2018)
+
+movie-this 
+
+
+movie-this 
+
+
+movie-this 
+
+
+movie-this 
+
+
+movie-this 
+
+
+movie-this forrest gump
+
+Year: 1994
+title: Forrest Gump
+Country: USA
+IMDB Rating: 8.8
+Language: English
+Rotten Tomatoes: 72%
+Actors: Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys
+Plot: The presidencies of Kennedy and Johnson, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.
+
+movie-this Mr. Nobody
+
+title: Mr. Nobody
+IMDB Rating: 7.9
+Year: 2009
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Rotten Tomatoes: 66%
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+
+movie-this Mr. Nobody
+
+IMDB Rating: 7.9
+Year: 2009
+title: Mr. Nobody
+Rotten Tomatoes: 66%
+Language: English, Mohawk
+Country: Belgium, Germany, Canada, France, USA, UK
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+
+movie-this black panther
+
+Year: 2018
+Country: USA
+title: Black Panther
+IMDB Rating: 7.8
+Language: Swahili, Nama, English, Xhosa, Korean
+Rotten Tomatoes: 97%
+Plot: T'Challa, the King of Wakanda, rises to the throne in the isolated, technologically advanced African nation, but his claim is challenged by a vengeful outsider who was a childhood victim of T'Challa's father's mistake.
+Actors: Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
+
+do-what-it-says 
+
+
+do-what-it-says forrest gump
+
+title: Forrest Gump
+Year: 1994
+IMDB Rating: 8.8
+Rotten Tomatoes: 72%
+Country: USA
+Language: English
+Plot: The presidencies of Kennedy and Johnson, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.
+Actors: Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys

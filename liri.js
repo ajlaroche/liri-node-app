@@ -91,14 +91,12 @@ function spot() {
 
 function movies() {
     logCommand();
-    if (typeof userArgument == "undefined") {
-        userArgument = "Mr. Nobody";
-    }
+    
     var queryUrl = "http://www.omdbapi.com/?t=" + userArgument + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl);
     request(queryUrl, function (error, response, body) {
         if (!error && response.statusCode === 200) {
-            if (typeof JSON.parse(body).Title == "undefined") {
+            if (typeof JSON.parse(body).Title == "undefined" && userArgument == "undefined") {
                 console.log("Movie not found.  Check spelling or enter different title.");
             } else {
                 console.log("title: " + JSON.parse(body).Title);
@@ -170,6 +168,9 @@ if (userCommand === "spotify-this-song") {
 var queryUrl = "http://www.omdbapi.com/?t=" + userArgument + "&y=&plot=short&apikey=trilogy";
 
 if (userCommand === "movie-this") {
+    if (typeof userArgument == "undefined") {
+        userArgument = "Mr. Nobody";
+    }
     movies();
 }
 
