@@ -187,6 +187,9 @@ if (userCommand === "my-tweets") {
 }
 
 if (userCommand === "spotify-this-song") {
+    if (typeof userArgument == "undefined") {
+        userArgument = "the sign";
+    }
     spot();
 }
 
