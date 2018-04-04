@@ -2,12 +2,11 @@ require("dotenv").config();
 
 var keys = require("./keys.js");
 var Twitter = require("twitter");
-// var Spotify = require('node-spotify-api');
-
 var SpotifyWebApi = require('spotify-web-api-node');
 var request = require("request");
 var fs = require("fs");
 
+// Function saves my command lines to log.txt file
 function logCommand() {
     if (typeof userArgument === "undefined") {
         userArgument = "";
@@ -19,15 +18,13 @@ function logCommand() {
     });
 }
 
-// var spotify = new Spotify(keys.spotify);
+//Retrieve keys from file
 var spotifyApi = new SpotifyWebApi(keys.spotify);
 var client = new Twitter(keys.twitter);
 
-// Retrieve an access token.
+var params = { screen_name: 'rocktest6' }; //Insert twitter handle here
 
-
-var params = { screen_name: 'rocktest6' };
-
+//Collecting command line user input
 var userInput = process.argv;
 
 var userCommand = userInput[2];
@@ -225,6 +222,8 @@ if (userCommand === "do-what-it-says") {
             case "movie-this":
                 movies();
                 break;
+            default:
+            console.log("file has an invalid command");
         }
     });
 }

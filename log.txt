@@ -190,3 +190,77 @@ Album name: Poodle Hat
 Song name: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
 Preview url: https://p.scdn.co/mp3-preview/e217ea111ab84a777f204252fce4b18d5de3ae80?cid=f80c7f468d8b4e59ad3b387b3d92fdaf
 -------------------------------------------------------------------
+
+do-what-it-says 
+
+
+do-what-it-says I Want it That Way
+
+Album name: 90 Sweet 90s Hits!
+Preview url: https://p.scdn.co/mp3-preview/2f96341eb8415a3efb27375db1c4d59928408c2f?cid=f80c7f468d8b4e59ad3b387b3d92fdaf
+Song name: I Want It That Way
+Artist name: Various Artists
+-------------------------------------------------------------------
+Artist name: Manuel Costa
+Song name: I Want It That Way
+Album name: I Want It That Way
+Preview url: https://p.scdn.co/mp3-preview/cdde86f49ca4ef217ac08bbbb0c6295c16f015b0?cid=f80c7f468d8b4e59ad3b387b3d92fdaf
+-------------------------------------------------------------------
+Artist name: "Weird Al" Yankovic
+Song name: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
+Preview url: https://p.scdn.co/mp3-preview/e217ea111ab84a777f204252fce4b18d5de3ae80?cid=f80c7f468d8b4e59ad3b387b3d92fdaf
+Album name: Poodle Hat
+-------------------------------------------------------------------
+
+spotify-this-song ice ice baby
+
+Song name: Ice Ice Baby
+Artist name: Various Artists
+Album name: 20 #1's: One Hit Wonder
+Preview url: null
+-------------------------------------------------------------------
+Album name: 90s Hip Hop
+Artist name: Various Artists
+Song name: Ice Ice Baby
+-------------------------------------------------------------------
+Preview url: null
+Artist name: Glee Cast
+Preview url: https://p.scdn.co/mp3-preview/c1798e6831d5800691308eb1d131a525dd26f859?cid=f80c7f468d8b4e59ad3b387b3d92fdaf
+Song name: Ice Ice Baby (Glee Cast Version)
+Album name: Ice Ice Baby (Glee Cast Version)
+-------------------------------------------------------------------
+
+spotify-this-song vanilla ice
+
+Album name: 20 #1's: One Hit Wonder
+Artist name: Various Artists
+Preview url: null
+Song name: Ice Ice Baby
+-------------------------------------------------------------------
+Artist name: Various Artists
+Album name: 90s Hip Hop
+Song name: Ice Ice Baby
+Preview url: null
+-------------------------------------------------------------------
+Preview url: https://p.scdn.co/mp3-preview/4759ad809d7666d253c05f5779c7365b0ed5e3b4?cid=f80c7f468d8b4e59ad3b387b3d92fdaf
+Artist name: Jerry Bock
+Song name: Vanilla Ice Cream
+Album name: She Loves Me (2016 Broadway Cast Recording)
+-------------------------------------------------------------------
+
+my-tweets 
+
+Tweet #1: Happy Easter to All!  (created on: Sun Apr 01 22:02:07 +0000 2018)
+Tweet #2: Here is a second tweet  (created on: Sat Mar 31 00:20:51 +0000 2018)
+Tweet #3: Just setting up my Twitter. #myfirstTweet  (created on: Fri Mar 30 01:52:06 +0000 2018)
+
+movie-this wedding crashers
+
+title: Wedding Crashers
+Year: 2005
+Rotten Tomatoes: 76%
+IMDB Rating: 7.0
+Plot: John Beckwith and Jeremy Grey, a pair of committed womanizers who sneak into weddings to take advantage of the romantic tinge in the air, find themselves at odds with one another when John meets and falls for Claire Cleary.
+Language: English
+Country: USA
+Actors: Owen Wilson, Vince Vaughn, Christopher Walken, Rachel McAdams
